@@ -5,10 +5,14 @@ public class Account {
     private double saldo = 0;
     private double zinssatz = 0.01;
     public static final String waehrung = "CHF";
-    public Person owner;
+    private Person owner;
 
     public Account(Person owner) {
         this.owner = owner;
+    }
+
+    public Person getOwner() {
+        return owner;
     }
 
     public double getSaldo() {
@@ -43,6 +47,10 @@ public class Account {
                     "Der Betrag, der abgehoben werden sollte, muss kleiner oder gleich gross wie der Kontostand sein."
             );
         }
+    }
+
+    public void setOwner(Person owner) {
+        this.owner = owner;
     }
 
     public void setZinssatz(double zinssatz) {

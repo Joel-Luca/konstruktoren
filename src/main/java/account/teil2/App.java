@@ -3,15 +3,21 @@ package account.teil2;
 public class App {
     public static void main(String[] args) {
 
-        private Person TeamH = {moritz, joel1, yanik, }
+        Person moritz = new Person("Moritz", "lehmann");
+        Person yanik = new Person("Yanik", "Kohler");
+        Person joel = new Person("Joel", "Christinet");
+        Person tobias = new Person("Tobias", "Saile");
+        Person gian = new Person("Gian", "Rüegsegger");
+        Person ricardo = new Person("Rivardo", "Fernandes");
 
-        Account[] accounts = Account.createAccounts(TeamH);
+        Person[] persons = {moritz, joel, yanik, tobias, gian, ricardo};
+
+        Account[] accounts = Account.createAccountsForPeople(persons);
 
         for (Account account : accounts) {
             try {
-                double max = RandomHelper.getRandomDouble(1, 1000);
-                account.zahleEin(max);
-                account.hebeAb(RandomHelper.getRandomDouble(1, max));
+                account.zahleEin(RandomHelper.getRandomDouble(1, 1000));
+                account.hebeAb(RandomHelper.getRandomDouble(1, account.getSaldo()));
             }
             catch (IllegalArgumentException e) {
                 System.out.println(e.getMessage());
@@ -25,6 +31,6 @@ public class App {
                 index = i;
             }
         }
-        System.out.println("Der " + (index + 1) + ".Account hat den grössten Betrag: " + accounts[index].getSaldo());
+        System.out.println("Der Gewinner ist " + accounts[index].getOwner().getFirstName() + " " + accounts[index].getOwner().getLastName() + " und hat einen Betrag von " + accounts[index].getSaldo() + " " + Account.waehrung);
     }
 }
