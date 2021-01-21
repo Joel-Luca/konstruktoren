@@ -4,12 +4,12 @@ public class Person {
 
     private String firstName;
     private String lastName;
-    private String adress;
-    private String city;
+    private Adress adress;
 
-    public Person(String firstName, String lastName) {
+    public Person(String firstName, String lastName, Adress adress) {
         this.firstName = firstName;
         this.lastName = lastName;
+        this.adress = adress;
     }
 
     public String getFirstName() {
@@ -20,12 +20,8 @@ public class Person {
         return lastName;
     }
 
-    public String getAdress() {
+    public Adress getAdress() {
         return adress;
-    }
-
-    public String getCity() {
-        return city;
     }
 
     public void setFirstName(String firstName) {
@@ -36,11 +32,8 @@ public class Person {
         this.lastName = lastName;
     }
 
-    public void setAdress(String adress) {
+    public void setAdress(Adress adress) {
         this.adress = adress;
     }
 
-    public void setCity(String city) {
-        this.city = city;
-    }
 }

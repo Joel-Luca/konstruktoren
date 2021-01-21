@@ -3,12 +3,12 @@ package account.teil2;
 public class App {
     public static void main(String[] args) {
 
-        Person moritz = new Person("Moritz", "lehmann");
-        Person yanik = new Person("Yanik", "Kohler");
-        Person joel = new Person("Joel", "Christinet");
-        Person tobias = new Person("Tobias", "Saile");
-        Person gian = new Person("Gian", "Rüegsegger");
-        Person ricardo = new Person("Rivardo", "Fernandes");
+        Person moritz = new Person("Moritz", "lehmann", new Adress(1234, "Bahnhofstrasse", 7, "Dotzigen"));
+        Person yanik = new Person("Yanik", "Kohler", new Adress(4321, "Solothurnstrasse", 91, "Biel"));
+        Person joel = new Person("Joel", "Christinet", new Adress(3665, "Kilchweg", 16, "Wattenwil"));
+        Person tobias = new Person("Tobias", "Saile", new Adress(9876, "Wasweissich", 12, "Dafragstdumich"));
+        Person gian = new Person("Gian", "Rüegsegger", new Adress(3000, "KeineAhnnung", 21, "Uetendorf"));
+        Person ricardo = new Person("Ricardo", "Fernandes", new Adress(3200, "Jucktmichnicht", 123, "Bümpliz"));
 
         Person[] persons = {moritz, joel, yanik, tobias, gian, ricardo};
 
@@ -31,6 +31,7 @@ public class App {
                 index = i;
             }
         }
-        System.out.println("Der Gewinner ist " + accounts[index].getOwner().getFirstName() + " " + accounts[index].getOwner().getLastName() + " und hat einen Betrag von " + accounts[index].getSaldo() + " " + Account.waehrung);
+        System.out.println("Der Gewinner ist " + accounts[index].getOwner().getFirstName() + " " + accounts[index].getOwner().getLastName() + " und hat einen Betrag von " + accounts[index].getSaldo() + " " + Account.waehrung +
+                ". Er wohnt in " + accounts[index].getOwner().getAdress().getCity());
     }
 }
